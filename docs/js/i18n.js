@@ -47,7 +47,7 @@ const translations = {
     
     // Download
     'download.title': 'Ready to get started?',
-    'download.desc': 'Download the latest version directly from GitHub. The app is currently not available on the Google Play Store.',
+    'download.desc': 'Download the latest version directly. The app is currently not available on the Google Play Store.',
     'download.btnPrimary': 'Download Latest Release',
     'download.btnSecondary': 'Source Code',
     
@@ -108,7 +108,7 @@ const translations = {
     
     // Download
     'download.title': 'Prêt à commencer ?',
-    'download.desc': 'Téléchargez la dernière version directement depuis GitHub. L\'application n\'est actuellement pas disponible sur le Google Play Store.',
+    'download.desc': 'Téléchargez la dernière version directement. L\'application n\'est actuellement pas disponible sur le Google Play Store.',
     'download.btnPrimary': 'Télécharger la dernière version',
     'download.btnSecondary': 'Code Source',
     

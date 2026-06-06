@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnyForward - Reliable SMS & Call Forwarding</title>
     <meta name="description" content="A lightweight Android app that reliably forwards your incoming SMS messages and missed/rejected calls to your email address.">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="img/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/i18n.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -12,12 +13,13 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                </svg>
-                AnyForward
-            </div>
+            <!-- Logo is wrapped in an anchor tag linked to #home to support SPA navigation -->
+            <a href="#home" class="logo nav-link" data-target="home">
+                <!-- Centralized SVG icon loaded via img tag for consistency across the site -->
+                <img src="img/favicon.svg" alt="AnyForward Logo" style="width: 32px; height: 32px;" />
+                <!-- Text wrapped in a span to allow hiding it on very small screens (see CSS max-width: 480px) -->
+                <span class="logo-text">AnyForward</span>
+            </a>
             
             <div class="nav-links" id="nav-links">
                 <a href="#home" class="nav-link active" data-target="home" data-i18n="nav.home">Home</a>
@@ -75,30 +77,10 @@
                 </div>
                 <div class="hero-image">
                     <div class="phone-mockup">
+                        <!-- The notch overlay creates a smartphone bezel effect -->
                         <div class="phone-notch"></div>
-                        <div class="phone-screen">
-                            <div class="mock-card">
-                                <div class="mock-icon"></div>
-                                <div class="mock-lines">
-                                    <div class="mock-line-1"></div>
-                                    <div class="mock-line-2"></div>
-                                </div>
-                            </div>
-                            <div class="mock-card" style="opacity: 0.8;">
-                                <div class="mock-icon"></div>
-                                <div class="mock-lines">
-                                    <div class="mock-line-1" style="width: 60%;"></div>
-                                    <div class="mock-line-2" style="width: 40%;"></div>
-                                </div>
-                            </div>
-                            <div class="mock-card" style="opacity: 0.5;">
-                                <div class="mock-icon"></div>
-                                <div class="mock-lines">
-                                    <div class="mock-line-1" style="width: 90%;"></div>
-                                    <div class="mock-line-2" style="width: 70%;"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- App screenshot replacing the CSS-only mock screen -->
+                        <img src="img/AnyForward.jpg" alt="AnyForward App Screenshot" class="phone-screen-img" />
                     </div>
                 </div>
             </div>
@@ -235,10 +217,12 @@
         <section class="tab-section" id="download">
             <div class="download-section">
                 <h2 class="section-title" data-i18n="download.title">Ready to get started?</h2>
-                <p data-i18n="download.desc">Download the latest version directly from GitHub. The app is currently not available on the Google Play Store.</p>
+                <p data-i18n="download.desc">Download the latest version directly. The app is currently not available on the Google Play Store.</p>
                 <div class="download-buttons">
+                    <!-- Link updated to point directly to the hosted APK in the repository -->
                     <a href="releases/latest/AnyForward_latest.apk" download class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -269,9 +253,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                </svg>
+                <!-- Reused centralized SVG icon -->
+                <img src="img/favicon.svg" alt="AnyForward Logo" style="width: 24px; height: 24px;" />
                 AnyForward
             </div>
             <div class="footer-links">
