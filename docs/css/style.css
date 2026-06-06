@@ -80,7 +80,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -218,7 +218,7 @@ nav {
 /* Hero Section */
 .hero {
   padding: 8rem 5% 4rem;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -411,7 +411,7 @@ nav {
 /* Section Styles */
 section {
   padding: 5rem 5%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -425,15 +425,15 @@ section {
 /* Features Section */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .feature-card {
   background-color: var(--surface-solid);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: var(--card-shadow);
 }
@@ -561,7 +561,7 @@ footer {
 }
 
 .footer-content {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -603,6 +603,12 @@ footer {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -649,5 +655,11 @@ footer {
 
   .hero h1 {
     font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
