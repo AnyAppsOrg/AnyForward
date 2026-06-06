@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyForward - Reliable SMS & Call Forwarding</title>
+    <meta name="description" content="A lightweight Android app that reliably forwards your incoming SMS messages and missed/rejected calls to your email address.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+                AnyForward
+            </div>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link active" data-target="home" data-i18n="nav.home">Home</a>
+                <a href="#features" class="nav-link" data-target="features" data-i18n="nav.features">Features</a>
+                <a href="#faq" class="nav-link" data-target="faq" data-i18n="nav.faq">FAQ</a>
+                <a href="#download" class="nav-link" data-target="download" data-i18n="nav.download">Download</a>
+                <a href="#donate" class="nav-link" data-target="donate" data-i18n="nav.donate">Donate</a>
+            </div>
+            
+            <div class="controls">
+                <select class="lang-select" id="lang-select" aria-label="Select Language">
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="fr">🇫🇷 FR</option>
+                </select>
+                <button class="theme-switch" id="theme-switch" aria-label="Toggle Theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Default path is moon, will be swapped by JS -->
+                        <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section class="tab-section active" id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 data-i18n="hero.title">Forward SMS & Calls seamlessly.</h1>
+                    <p data-i18n="hero.subtitle">A lightweight Android app that reliably forwards your incoming SMS messages and missed/rejected calls to your email address.</p>
+                    <div class="btn-group">
+                        <a href="#download" class="btn btn-primary nav-link" data-target="download">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span data-i18n="hero.downloadBtn">Download APK</span>
+                        </a>
+<!--                        <a href="" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">-->
+<!--                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
+<!--                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>-->
+<!--                            </svg>-->
+<!--                            <span data-i18n="hero.githubBtn">View on GitHub</span>-->
+<!--                        </a>-->
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="mock-card">
+                                <div class="mock-icon"></div>
+                                <div class="mock-lines">
+                                    <div class="mock-line-1"></div>
+                                    <div class="mock-line-2"></div>
+                                </div>
+                            </div>
+                            <div class="mock-card" style="opacity: 0.8;">
+                                <div class="mock-icon"></div>
+                                <div class="mock-lines">
+                                    <div class="mock-line-1" style="width: 60%;"></div>
+                                    <div class="mock-line-2" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                            <div class="mock-card" style="opacity: 0.5;">
+                                <div class="mock-icon"></div>
+                                <div class="mock-lines">
+                                    <div class="mock-line-1" style="width: 90%;"></div>
+                                    <div class="mock-line-2" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="tab-section" id="features">
+            <h2 class="section-title" data-i18n="features.title">Why use AnyForward?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.card1.title">Reliable Forwarding</h3>
+                    <p data-i18n="features.card1.desc">Ensures your messages and call notifications are always delivered. With built-in retry logic, it handles network drops gracefully.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.card2.title">Privacy First</h3>
+                    <p data-i18n="features.card2.desc">Your data stays local. Messages and call logs go directly from your phone to your configured email provider.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                            <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.card3.title">Battery Efficient</h3>
+                    <p data-i18n="features.card3.desc">Designed to run quietly in the background without draining your battery or consuming excessive resources.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.card4.title">Call Notifications</h3>
+                    <p data-i18n="features.card4.desc">Never miss an important call. Get instant email notifications for missed or rejected calls.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="tab-section" id="faq">
+            <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-i18n="faq.q1">Is it safe to use?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a1">Yes! AnyForward only requires the permissions necessary to read SMS, call logs, and send emails. It does not send your data anywhere else.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-i18n="faq.q2">How do I configure my email?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a2">You need an SMTP server (like Gmail, Outlook, or a custom one). For Gmail, you will need to generate an "App Password" in your Google Account security settings.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-i18n="faq.q3">Does it work when the app is closed?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a3">Yes, it uses a background service to ensure messages and call alerts are forwarded even if the app is not actively open on your screen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOWNLOAD SECTION -->
+        <section class="tab-section" id="download">
+            <div class="download-section">
+                <h2 class="section-title" data-i18n="download.title">Ready to get started?</h2>
+                <p data-i18n="download.desc">Download the latest version directly from GitHub. The app is currently not available on the Google Play Store.</p>
+                <div class="download-buttons">
+                    <a href="releases/latest/AnyForward_latest.apk" download class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span data-i18n="download.btnPrimary">Download Latest Release</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DONATE SECTION -->
+        <section class="tab-section" id="donate">
+            <div class="download-section" style="background: linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(251, 146, 60, 0.1));">
+                <h2 class="section-title" data-i18n="donate.title">Support the project</h2>
+                <p data-i18n="donate.desc">If you find AnyForward useful, consider supporting the development!</p>
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary" style="background-color: #f43f5e; box-shadow: 0 4px 14px 0 rgba(244, 63, 94, 0.39);" onclick="alert('Donation link coming soon!')">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span data-i18n="donate.btn">Donate</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+                AnyForward
+            </div>
+            <div class="footer-links">
+<!--                <a href="" target="_blank" rel="noopener noreferrer">GitHub</a>-->
+                <a href="#contact" class="nav-link" data-target="contact" data-i18n="nav.contact">Contact</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <span data-i18n="footer.madeWith">Made with ❤️ for Android.</span> <br>
+            <span data-i18n="footer.copyright">© 2026 AnyForward.</span>
+        </div>
+    </footer>
+</body>
+</html>

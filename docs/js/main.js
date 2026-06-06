@@ -1,0 +1,160 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Theme Toggle ---
+  const themeSwitch = document.getElementById('theme-switch');
+  const themeIconPath = themeSwitch.querySelector('path');
+  
+  // Check for saved theme preference, otherwise use system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  const sunIcon = "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z";
+  const moonIcon = "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z";
+  
+  function setTheme(isDark) {
+    if (isDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIconPath.setAttribute('d', sunIcon);
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      themeIconPath.setAttribute('d', moonIcon);
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // Initial theme setup
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    setTheme(true);
+  } else {
+    setTheme(false);
+  }
+
+  themeSwitch.addEventListener('click', () => {
+    const isDark = document.documentElement.hasAttribute('data-theme');
+    setTheme(!isDark);
+  });
+
+  // --- Language Switcher ---
+  const langSelect = document.getElementById('lang-select');
+  let currentLang = localStorage.getItem('lang') || 'en';
+  
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    if(langSelect) {
+      langSelect.value = lang;
+    }
+    
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  // Initial language setup
+  setLanguage(currentLang);
+
+  if(langSelect) {
+    langSelect.addEventListener('change', (e) => {
+      setLanguage(e.target.value);
+    });
+  }
+
+  // --- FAQ Accordion ---
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    questionBtn.addEventListener('click', () => {
+      // Close other open items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+        }
+      });
+      // Toggle current item
+      item.classList.toggle('active');
+    });
+  });
+
+  // --- Mobile Menu Toggle ---
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navLinksContainer = document.getElementById('nav-links');
+  
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinksContainer.classList.toggle('active');
+    });
+  }
+
+  // --- SPA Tab Navigation ---
+  const navLinks = document.querySelectorAll('.nav-link');
+  const tabSections = document.querySelectorAll('.tab-section');
+
+  function switchTab(targetId) {
+    // Hide all sections
+    tabSections.forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    // Deactivate all nav links
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Show target section
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.classList.add('active');
+    } else {
+      // Fallback to home
+      document.getElementById('home').classList.add('active');
+      targetId = 'home';
+    }
+
+    // Activate corresponding nav links
+    document.querySelectorAll(`.nav-link[data-target="${targetId}"]`).forEach(link => {
+      link.classList.add('active');
+    });
+
+    // Close mobile menu if open
+    if (navLinksContainer.classList.contains('active')) {
+      navLinksContainer.classList.remove('active');
+    }
+  }
+
+  // Handle clicks on navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('data-target');
+      if (targetId) {
+        // Prevent default only if it's an internal tab link
+        if (link.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            window.location.hash = targetId;
+            switchTab(targetId);
+            window.scrollTo(0, 0);
+        }
+      }
+    });
+  });
+
+  // Handle initial load based on URL hash
+  function handleHashChange() {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      switchTab(hash);
+    } else {
+      switchTab('home');
+    }
+  }
+
+  // Listen for browser back/forward buttons
+  window.addEventListener('hashchange', handleHashChange);
+  
+  // Call once on load
+  handleHashChange();
+});
