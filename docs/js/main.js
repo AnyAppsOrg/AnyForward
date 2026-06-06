@@ -157,4 +157,60 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Call once on load
   handleHashChange();
+
+  // --- Contact Form AJAX Submit ---
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalBtnContent = submitBtn.innerHTML;
+      
+      // Visual feedback during submission
+      submitBtn.innerHTML = '<span data-i18n="contact.sending">Sending...</span>';
+      submitBtn.disabled = true;
+
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+      })
+      .then(data => {
+        // Show success popup
+        showToast(currentLang === 'fr' ? 'Message envoyé avec succès !' : 'Message sent successfully!');
+        this.reset();
+      })
+      .catch(error => {
+        // Show error popup
+        showToast(currentLang === 'fr' ? 'Erreur lors de l\'envoi du message.' : 'Error sending message.');
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalBtnContent;
+        submitBtn.disabled = false;
+      });
+    });
+  }
+
+  function showToast(message) {
+      const toast = document.getElementById("toast");
+      const toastMsg = document.getElementById("toast-message");
+      if (toast && toastMsg) {
+          toastMsg.textContent = message;
+          toast.classList.add("show");
+          setTimeout(function() { 
+              toast.classList.remove("show"); 
+          }, 3000);
+      }
+  }
 });

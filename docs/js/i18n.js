@@ -2,8 +2,8 @@ const translations = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.features': 'Features',
-    'nav.faq': 'FAQ',
+    'nav.features': 'Features & FAQ',
+    'nav.contact': 'Contact',
     'nav.download': 'Download',
     'nav.donate': 'Donate',
     
@@ -32,6 +32,18 @@ const translations = {
     'faq.a2': 'You need an SMTP server (like Gmail, Outlook, or a custom one). For Gmail, you will need to generate an "App Password" in your Google Account security settings.',
     'faq.q3': 'Does it work when the app is closed?',
     'faq.a3': 'Yes, it uses a background service to ensure messages and call alerts are forwarded even if the app is not actively open on your screen.',
+
+    // Contact
+    'contact.title': 'Contact Us',
+    'contact.desc': 'Have a question or found a bug? Send us a message!',
+    'contact.subject': 'Subject',
+    'contact.email': 'Your Email',
+    'contact.theme': 'Topic',
+    'contact.theme.bug': 'Report a Bug',
+    'contact.theme.feature': 'Feature Request',
+    'contact.theme.other': 'Other',
+    'contact.message': 'Message',
+    'contact.submit': 'Send Message',
     
     // Download
     'download.title': 'Ready to get started?',
@@ -51,8 +63,8 @@ const translations = {
   fr: {
     // Navigation
     'nav.home': 'Accueil',
-    'nav.features': 'Fonctionnalités',
-    'nav.faq': 'FAQ',
+    'nav.features': 'Fonctionnalités & FAQ',
+    'nav.contact': 'Contact',
     'nav.download': 'Télécharger',
     'nav.donate': 'Faire un don',
     
@@ -81,6 +93,18 @@ const translations = {
     'faq.a2': 'Vous avez besoin d\'un serveur SMTP (comme Gmail, Outlook, ou un serveur personnalisé). Pour Gmail, vous devrez générer un "Mot de passe d\'application" dans vos paramètres de sécurité Google.',
     'faq.q3': 'Est-ce que ça marche quand l\'application est fermée ?',
     'faq.a3': 'Oui, l\'application utilise un service en arrière-plan pour s\'assurer que les messages et alertes d\'appels sont transférés même si elle n\'est pas activement ouverte.',
+
+    // Contact
+    'contact.title': 'Nous Contacter',
+    'contact.desc': 'Vous avez une question ou trouvé un bug ? Envoyez-nous un message !',
+    'contact.subject': 'Objet',
+    'contact.email': 'Votre E-mail',
+    'contact.theme': 'Sujet',
+    'contact.theme.bug': 'Signaler un Bug',
+    'contact.theme.feature': 'Demande de Fonctionnalité',
+    'contact.theme.other': 'Autre',
+    'contact.message': 'Message',
+    'contact.submit': 'Envoyer le Message',
     
     // Download
     'download.title': 'Prêt à commencer ?',

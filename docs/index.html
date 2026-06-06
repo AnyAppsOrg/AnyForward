@@ -21,9 +21,9 @@
             
             <div class="nav-links" id="nav-links">
                 <a href="#home" class="nav-link active" data-target="home" data-i18n="nav.home">Home</a>
-                <a href="#features" class="nav-link" data-target="features" data-i18n="nav.features">Features</a>
-                <a href="#faq" class="nav-link" data-target="faq" data-i18n="nav.faq">FAQ</a>
+                <a href="#features" class="nav-link" data-target="features" data-i18n="nav.features">Features & FAQ</a>
                 <a href="#download" class="nav-link" data-target="download" data-i18n="nav.download">Download</a>
+                <a href="#contact" class="nav-link" data-target="contact" data-i18n="nav.contact">Contact</a>
                 <a href="#donate" class="nav-link" data-target="donate" data-i18n="nav.donate">Donate</a>
             </div>
             
@@ -150,44 +150,83 @@
                     <p data-i18n="features.card4.desc">Never miss an important call. Get instant email notifications for missed or rejected calls.</p>
                 </div>
             </div>
+
+            <!-- Merged FAQ -->
+            <div style="margin-top: 5rem;">
+                <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span data-i18n="faq.q1">Is it safe to use?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a1">Yes! AnyForward only requires the permissions necessary to read SMS, call logs, and send emails. It does not send your data anywhere else.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span data-i18n="faq.q2">How do I configure my email?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a2">You need an SMTP server (like Gmail, Outlook, or a custom one). For Gmail, you will need to generate an "App Password" in your Google Account security settings.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span data-i18n="faq.q3">Does it work when the app is closed?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-i18n="faq.a3">Yes, it uses a background service to ensure messages and call alerts are forwarded even if the app is not actively open on your screen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FAQ SECTION -->
-        <section class="tab-section" id="faq">
-            <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span data-i18n="faq.q1">Is it safe to use?</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p data-i18n="faq.a1">Yes! AnyForward only requires the permissions necessary to read SMS, call logs, and send emails. It does not send your data anywhere else.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span data-i18n="faq.q2">How do I configure my email?</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p data-i18n="faq.a2">You need an SMTP server (like Gmail, Outlook, or a custom one). For Gmail, you will need to generate an "App Password" in your Google Account security settings.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span data-i18n="faq.q3">Does it work when the app is closed?</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p data-i18n="faq.a3">Yes, it uses a background service to ensure messages and call alerts are forwarded even if the app is not actively open on your screen.</p>
-                    </div>
+        <!-- CONTACT SECTION -->
+        <section class="tab-section" id="contact">
+            <div class="download-section" style="background: transparent; border: none; padding-top: 0;">
+                <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
+                <p style="margin-bottom: 3rem; color: var(--text-secondary);" data-i18n="contact.desc">Have a question or found a bug? Send us a message!</p>
+                <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                    <form action="https://formsubmit.co/ajax/8c57954d3f6078d287315971513030f2" method="POST" class="contact-form" id="contactForm">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="contact-subject" data-i18n="contact.subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Subject</label>
+                            <input type="text" id="contact-subject" name="_subject" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--surface-solid); color: var(--text-primary);">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="contact-email" data-i18n="contact.email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Email</label>
+                            <input type="email" id="contact-email" name="email" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--surface-solid); color: var(--text-primary);">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="contact-theme" data-i18n="contact.theme" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Topic</label>
+                            <select id="contact-theme" name="theme" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--surface-solid); color: var(--text-primary);">
+                                <option value="bug" data-i18n="contact.theme.bug">Report a Bug</option>
+                                <option value="feature" data-i18n="contact.theme.feature">Feature Request</option>
+                                <option value="other" data-i18n="contact.theme.other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="contact-message" data-i18n="contact.message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+                            <textarea id="contact-message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--surface-solid); color: var(--text-primary); resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            <span data-i18n="contact.submit">Send Message</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -245,5 +284,10 @@
             <span data-i18n="footer.copyright">© 2026 AnyForward.</span>
         </div>
     </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toast-message"></span>
+    </div>
 </body>
 </html>
