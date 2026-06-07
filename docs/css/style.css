@@ -169,7 +169,13 @@ nav {
   fill: currentColor;
 }
 
-.lang-select {
+/* Custom Language Select */
+.custom-lang-select {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-select-btn {
   background: var(--surface-solid);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
@@ -180,10 +186,61 @@ nav {
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.lang-select:hover {
+.lang-select-btn:hover {
   border-color: var(--primary-color);
+}
+
+.lang-select-btn img {
+  border-radius: 2px;
+  display: block;
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: var(--surface-solid);
+  min-width: 100%;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.lang-dropdown.show {
+  display: block;
+}
+
+.lang-option {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.lang-option:hover {
+  background-color: var(--border-color);
+}
+
+.lang-option img {
+  border-radius: 2px;
+  display: block;
 }
 
 .mobile-menu-btn {

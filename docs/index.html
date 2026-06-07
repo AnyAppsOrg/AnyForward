@@ -44,10 +44,19 @@
             </div>
             
             <div class="controls">
-                <select class="lang-select" id="lang-select" aria-label="Select Language">
-                    <option value="en">🇬🇧 EN</option>
-                    <option value="fr">🇫🇷 FR</option>
-                </select>
+                <div class="custom-lang-select" id="custom-lang-select">
+                    <button class="lang-select-btn" id="lang-select-btn" aria-label="Select Language" aria-expanded="false">
+                        <img src="https://flagcdn.com/gb.svg" width="18" alt="EN"> <span>EN</span>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <button class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/gb.svg" width="18" alt="EN"> EN
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <img src="https://flagcdn.com/fr.svg" width="18" alt="FR"> FR
+                        </button>
+                    </div>
+                </div>
                 <button class="theme-switch" id="theme-switch" aria-label="Toggle Theme">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Default path is moon, will be swapped by JS -->

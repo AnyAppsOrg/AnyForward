@@ -34,14 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Language Switcher ---
-  const langSelect = document.getElementById('lang-select');
+  const langSelectBtn = document.getElementById('lang-select-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  const langOptions = document.querySelectorAll('.lang-option');
+  
   let currentLang = localStorage.getItem('lang') || 'en';
   
   function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
-    if(langSelect) {
-      langSelect.value = lang;
+    
+    if (langSelectBtn) {
+      if (lang === 'fr') {
+        langSelectBtn.innerHTML = '<img src="https://flagcdn.com/fr.svg" width="18" alt="FR"> <span>FR</span>';
+      } else {
+        langSelectBtn.innerHTML = '<img src="https://flagcdn.com/gb.svg" width="18" alt="EN"> <span>EN</span>';
+      }
     }
     
     // Update all elements with data-i18n attribute
@@ -56,9 +64,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial language setup
   setLanguage(currentLang);
 
-  if(langSelect) {
-    langSelect.addEventListener('change', (e) => {
-      setLanguage(e.target.value);
+  if (langSelectBtn && langDropdown) {
+    // Toggle dropdown
+    langSelectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = langSelectBtn.getAttribute('aria-expanded') === 'true';
+      langSelectBtn.setAttribute('aria-expanded', !isExpanded);
+      langDropdown.classList.toggle('show');
+    });
+
+    // Handle option click
+    langOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        setLanguage(option.getAttribute('data-lang'));
+        langDropdown.classList.remove('show');
+        langSelectBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!langSelectBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+        langDropdown.classList.remove('show');
+        langSelectBtn.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
