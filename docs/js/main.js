@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeSwitch = document.getElementById('theme-switch');
   const themeIconPath = themeSwitch.querySelector('path');
   
-  // Check for saved theme preference, otherwise use system preference
+  // Check for saved theme preference
   const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
   const sunIcon = "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z";
   const moonIcon = "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z";
@@ -23,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Initial theme setup
-  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    setTheme(true);
-  } else {
+  if (savedTheme === 'light') {
     setTheme(false);
+  } else {
+    setTheme(true);
   }
 
   themeSwitch.addEventListener('click', () => {
@@ -212,5 +211,18 @@ document.addEventListener('DOMContentLoaded', () => {
               toast.classList.remove("show"); 
           }, 3000);
       }
+  }
+  
+  // --- Google Analytics Event Tracking ---
+  const downloadBtn = document.getElementById('apk-download-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'download', {
+          'event_category': 'APK',
+          'event_label': 'AnyForward Latest Release'
+        });
+      }
+    });
   }
 });

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGKNZT9Y5P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CGKNZT9Y5P');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnyForward - Reliable SMS & Call Forwarding</title>
@@ -9,6 +18,11 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/i18n.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script>
+        if (localStorage.getItem('theme') !== 'light') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -220,7 +234,7 @@
                 <p data-i18n="download.desc">Download the latest version directly. The app is currently not available on the Google Play Store.</p>
                 <div class="download-buttons">
                     <!-- Link updated to point directly to the hosted APK in the repository -->
-                    <a href="releases/latest/AnyForward_latest.apk" download class="btn btn-primary">
+                    <a href="releases/latest/AnyForward_latest.apk" download class="btn btn-primary" id="apk-download-btn">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -263,7 +277,7 @@
             </div>
         </div>
         <div class="copyright">
-            <span data-i18n="footer.madeWith">Made with ❤️ for Android.</span> <br>
+            <span data-i18n="footer.madeWith">Made for Android.</span> <br>
             <span data-i18n="footer.copyright">© 2026 AnyForward.</span>
         </div>
     </footer>

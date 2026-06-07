@@ -57,7 +57,7 @@ const translations = {
     'donate.btn': 'Donate',
 
     // Footer
-    'footer.madeWith': 'Made with ❤️ for Android.',
+    'footer.madeWith': 'Made for Android.',
     'footer.copyright': '© 2026 AnyForward.'
   },
   fr: {
@@ -118,7 +118,7 @@ const translations = {
     'donate.btn': 'Faire un don',
 
     // Footer
-    'footer.madeWith': 'Fait avec ❤️ pour Android.',
+    'footer.madeWith': 'Fait pour Android.',
     'footer.copyright': '© 2026 AnyForward.'
   }
 };
