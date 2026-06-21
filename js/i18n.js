@@ -5,12 +5,12 @@ const translations = {
     'nav.features': 'Features & FAQ',
     'nav.contact': 'Contact',
     'nav.download': 'Download',
-    'nav.donate': 'Donate',
+    // 'nav.donate': 'Donate',
     
     // Hero
     'hero.title': 'Forward SMS & Calls seamlessly.',
     'hero.subtitle': 'A lightweight Android app that reliably forwards your incoming SMS messages and missed/rejected calls to your email address.',
-    'hero.downloadBtn': 'Download APK',
+    'hero.downloadBtn': 'Get the App',
     'hero.githubBtn': 'View on GitHub',
     
     // Features
@@ -47,14 +47,15 @@ const translations = {
     
     // Download
     'download.title': 'Ready to get started?',
-    'download.desc': 'Download the latest version directly. The app is currently not available on the Google Play Store.',
+    'download.desc': 'Get the app securely from the Google Play Store.',
+    'download.getItOn': 'GET IT ON',
     'download.btnPrimary': 'Download Latest Release',
     'download.btnSecondary': 'Source Code',
     
     // Donate
-    'donate.title': 'Support the project',
-    'donate.desc': 'If you find AnyForward useful, consider supporting the development!',
-    'donate.btn': 'Donate',
+    // 'donate.title': 'Support the project',
+    // 'donate.desc': 'If you find AnyForward useful, consider supporting the development!',
+    // 'donate.btn': 'Donate',
 
     // Footer
     'footer.madeWith': 'Made for Android.',
@@ -66,12 +67,12 @@ const translations = {
     'nav.features': 'Fonctionnalités & FAQ',
     'nav.contact': 'Contact',
     'nav.download': 'Télécharger',
-    'nav.donate': 'Faire un don',
+    // 'nav.donate': 'Faire un don',
     
     // Hero
     'hero.title': 'Transférez vos SMS et Appels.',
     'hero.subtitle': 'Une application Android légère qui transfère de manière fiable vos SMS entrants et vos appels manqués/refusés vers votre adresse e-mail.',
-    'hero.downloadBtn': 'Télécharger l\'APK',
+    'hero.downloadBtn': 'Obtenir l\'application',
     'hero.githubBtn': 'Voir sur GitHub',
     
     // Features
@@ -108,14 +109,15 @@ const translations = {
     
     // Download
     'download.title': 'Prêt à commencer ?',
-    'download.desc': 'Téléchargez la dernière version directement. L\'application n\'est actuellement pas disponible sur le Google Play Store.',
+    'download.desc': 'Obtenez l\'application en toute sécurité sur le Google Play Store.',
+    'download.getItOn': 'DISPONIBLE SUR',
     'download.btnPrimary': 'Télécharger la dernière version',
     'download.btnSecondary': 'Code Source',
     
     // Donate
-    'donate.title': 'Soutenir le projet',
-    'donate.desc': 'Si vous trouvez AnyForward utile, envisagez de soutenir le développement !',
-    'donate.btn': 'Faire un don',
+    // 'donate.title': 'Soutenir le projet',
+    // 'donate.desc': 'Si vous trouvez AnyForward utile, envisagez de soutenir le développement !',
+    // 'donate.btn': 'Faire un don',
 
     // Footer
     'footer.madeWith': 'Fait pour Android.',

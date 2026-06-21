@@ -243,13 +243,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // --- Google Analytics Event Tracking ---
-  const downloadBtn = document.getElementById('apk-download-btn');
+  const downloadBtn = document.getElementById('google-play-btn');
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
       if (typeof gtag === 'function') {
         gtag('event', 'download', {
-          'event_category': 'APK',
-          'event_label': 'AnyForward Latest Release'
+          'event_category': 'Google Play',
+          'event_label': 'AnyForward Store Listing'
         });
       }
     });
