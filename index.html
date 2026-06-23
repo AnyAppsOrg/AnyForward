@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
+    <!-- Note: Google Tag Manager does not use Subresource Integrity (SRI) as scripts are dynamically generated -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGKNZT9Y5P"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      globalThis.dataLayer = globalThis.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
@@ -20,7 +21,7 @@
     <script src="js/main.js" defer></script>
     <script>
         if (localStorage.getItem('theme') !== 'light') {
-            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.dataset.theme = 'dark';
         }
     </script>
 </head>
@@ -40,7 +41,6 @@
                 <a href="#features" class="nav-link" data-target="features" data-i18n="nav.features">Features & FAQ</a>
                 <a href="#download" class="nav-link" data-target="download" data-i18n="nav.download">Download</a>
                 <a href="#contact" class="nav-link" data-target="contact" data-i18n="nav.contact">Contact</a>
-                <!-- <a href="#donate" class="nav-link" data-target="donate" data-i18n="nav.donate">Donate</a> -->
             </div>
             
             <div class="controls">
@@ -90,12 +90,6 @@
                             </svg>
                             <span data-i18n="hero.downloadBtn">Download APK</span>
                         </a>
-<!--                        <a href="" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">-->
-<!--                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
-<!--                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>-->
-<!--                            </svg>-->
-<!--                            <span data-i18n="hero.githubBtn">View on GitHub</span>-->
-<!--                        </a>-->
                     </div>
                 </div>
                 <div class="hero-image">
@@ -255,7 +249,7 @@
                             </div>
                         </div>
                         <!-- Google Play Store Button -->
-                        <a id="google-play-btn" href="https://play.google.com/store/apps/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background-color: #000; color: #fff; padding: 8px 20px; border-radius: 8px; border: 1px solid #333; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                        <a id="google-play-btn" href="https://play.google.com/store/apps/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background-color: #000; color: #fff; padding: 8px 20px; border-radius: 8px; border: 1px solid #333; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onfocus="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';" onblur="this.style.transform='scale(1)'; this.style.boxShadow='none';">
                             <svg viewBox="0 0 24 24" width="32" height="32" style="margin-right: 12px;">
                                 <path fill="#00E676" d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5Z"/>
                                 <path fill="#29B6F6" d="M16.81,15.12L6.05,21.34L13.69,12L16.81,15.12Z"/>
@@ -272,23 +266,6 @@
             </div>
         </section>
 
-        <!-- DONATE SECTION -->
-        <!--
-        <section class="tab-section" id="donate">
-            <div class="download-section" style="background: linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(251, 146, 60, 0.1));">
-                <h2 class="section-title" data-i18n="donate.title">Support the project</h2>
-                <p data-i18n="donate.desc">If you find AnyForward useful, consider supporting the development!</p>
-                <div class="download-buttons">
-                    <a href="#" class="btn btn-primary" style="background-color: #f43f5e; box-shadow: 0 4px 14px 0 rgba(244, 63, 94, 0.39);" onclick="alert('Donation link coming soon!')">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                        <span data-i18n="donate.btn">Donate</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        -->
     </main>
 
     <footer>
@@ -299,7 +276,6 @@
                 AnyForward
             </div>
             <div class="footer-links">
-<!--                <a href="" target="_blank" rel="noopener noreferrer">GitHub</a>-->
                 <a href="#contact" class="nav-link" data-target="contact" data-i18n="nav.contact">Contact</a>
             </div>
         </div>

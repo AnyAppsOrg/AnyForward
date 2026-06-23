@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function setTheme(isDark) {
     if (isDark) {
-      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.dataset.theme = 'dark';
       themeIconPath.setAttribute('d', sunIcon);
       localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.removeAttribute('data-theme');
+      delete document.documentElement.dataset.theme;
       themeIconPath.setAttribute('d', moonIcon);
       localStorage.setItem('theme', 'light');
     }
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   themeSwitch.addEventListener('click', () => {
-    const isDark = document.documentElement.hasAttribute('data-theme');
+    const isDark = 'theme' in document.documentElement.dataset;
     setTheme(!isDark);
   });
 
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (translations[lang] && translations[lang][key]) {
+      const key = el.dataset.i18n;
+      if (translations[lang]?.[key]) {
         el.textContent = translations[lang][key];
       }
     });
@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
     langSelectBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isExpanded = langSelectBtn.getAttribute('aria-expanded') === 'true';
-      langSelectBtn.setAttribute('aria-expanded', !isExpanded);
+      langSelectBtn.setAttribute('aria-expanded', String(!isExpanded));
       langDropdown.classList.toggle('show');
     });
 
     // Handle option click
     langOptions.forEach(option => {
       option.addEventListener('click', () => {
-        setLanguage(option.getAttribute('data-lang'));
+        setLanguage(option.dataset.lang);
         langDropdown.classList.remove('show');
         langSelectBtn.setAttribute('aria-expanded', 'false');
       });
@@ -157,14 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle clicks on navigation links
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('data-target');
+      const targetId = link.dataset.target;
       if (targetId) {
         // Prevent default only if it's an internal tab link
         if (link.getAttribute('href').startsWith('#')) {
             e.preventDefault();
-            window.location.hash = targetId;
+            globalThis.location.hash = targetId;
             switchTab(targetId);
-            window.scrollTo(0, 0);
+            globalThis.scrollTo(0, 0);
         }
       }
     });
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle initial load based on URL hash
   function handleHashChange() {
-    const hash = window.location.hash.substring(1);
+    const hash = globalThis.location.hash.substring(1);
     if (hash) {
       switchTab(hash);
     } else {
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Listen for browser back/forward buttons
-  window.addEventListener('hashchange', handleHashChange);
+  globalThis.addEventListener('hashchange', handleHashChange);
   
   // Call once on load
   handleHashChange();
@@ -214,12 +214,12 @@ document.addEventListener('DOMContentLoaded', () => {
             throw new Error('Network response was not ok.');
         }
       })
-      .then(data => {
+      .then(() => {
         // Show success popup
         showToast(currentLang === 'fr' ? 'Message envoyé avec succès !' : 'Message sent successfully!');
         this.reset();
       })
-      .catch(error => {
+      .catch(() => {
         // Show error popup
         showToast(currentLang === 'fr' ? 'Erreur lors de l\'envoi du message.' : 'Error sending message.');
       })

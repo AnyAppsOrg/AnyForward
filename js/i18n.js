@@ -68,7 +68,6 @@ const translations = {
     'nav.features': 'Fonctionnalités & FAQ',
     'nav.contact': 'Contact',
     'nav.download': 'Télécharger',
-    // 'nav.donate': 'Faire un don',
     
     // Hero
     'hero.title': 'Transférez vos SMS et Appels.',
@@ -115,11 +114,6 @@ const translations = {
     'download.getItOn': 'DISPONIBLE SUR',
     'download.btnPrimary': 'Télécharger la dernière version',
     'download.btnSecondary': 'Code Source',
-    
-    // Donate
-    // 'donate.title': 'Soutenir le projet',
-    // 'donate.desc': 'Si vous trouvez AnyForward utile, envisagez de soutenir le développement !',
-    // 'donate.btn': 'Faire un don',
 
     // Footer
     'footer.madeWith': 'Fait pour Android.',
