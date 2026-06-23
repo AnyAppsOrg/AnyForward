@@ -48,6 +48,7 @@ const translations = {
     // Download
     'download.title': 'Ready to get started?',
     'download.desc': 'Get the app securely from the Google Play Store.',
+    'download.qrMessage': 'Scan to install on  Android',
     'download.getItOn': 'GET IT ON',
     'download.btnPrimary': 'Download Latest Release',
     'download.btnSecondary': 'Source Code',
@@ -110,6 +111,7 @@ const translations = {
     // Download
     'download.title': 'Prêt à commencer ?',
     'download.desc': 'Obtenez l\'application en toute sécurité sur le Google Play Store.',
+    'download.qrMessage': 'Scannez pour installer sur Android',
     'download.getItOn': 'DISPONIBLE SUR',
     'download.btnPrimary': 'Télécharger la dernière version',
     'download.btnSecondary': 'Code Source',
